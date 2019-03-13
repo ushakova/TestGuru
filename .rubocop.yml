@@ -1,0 +1,18 @@
+AllCops:
+  # Include common Ruby source files.
+  Include:
+    - 'app/**/*.rb'
+    - '**/Gemfile'
+    - '**/Rakefile'
+
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'bin/*'
+
+Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 80
+  IgnoredPatterns: ['\A#']
