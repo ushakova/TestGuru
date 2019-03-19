@@ -1,0 +1,13 @@
+%tr
+  %td
+    = link_to test.title, test_path(test)
+  %td
+    = test.level
+  %th
+    = test.questions.count
+  %th
+    = link_to 'Edit', edit_test_path(test)
+  %th
+    = link_to 'Delete', test_path(test),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' }

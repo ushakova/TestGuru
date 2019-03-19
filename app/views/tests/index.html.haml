@@ -1,0 +1,14 @@
+%h1
+  = 'Tests'
+= link_to 'New test', new_test_path
+%table
+  %tr
+    %th
+      = 'Title'
+    %th
+      = 'Level'
+    %th
+      = 'Number of questions'
+    %th
+    %th
+  = render @tests
