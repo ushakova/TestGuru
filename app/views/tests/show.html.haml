@@ -1,0 +1,20 @@
+%h1
+  = @test.title
+
+%h2
+  = "Level: #{@test.level}"
+%h2
+  = "Category: #{@test.category.title}"
+%h2
+  = 'Questions:'
+- @test.questions.each do |question|
+  %p
+    = question.body
+%p
+  = link_to 'Edit', edit_test_path(@test)
+%p
+  = link_to 'Delete', test_path(@test),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' }
+%p
+  = link_to 'Back', tests_path

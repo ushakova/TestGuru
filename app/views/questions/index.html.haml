@@ -1,2 +1,8 @@
-%p
-  = @questions.map(&:body)
+%table
+  %tr
+    %th
+      = 'Question'
+    %th
+    %th
+
+  = render @questions
