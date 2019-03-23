@@ -11,3 +11,6 @@
     = link_to 'Delete', test_path(test),
                         method: :delete,
                         data: { confirm: 'Are you sure?' }
+  %th
+    = link_to 'Start test', start_test_path(test.id),
+                          method: :post

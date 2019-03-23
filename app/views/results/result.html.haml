@@ -1,0 +1,8 @@
+%h1
+  = 'Test completed'
+
+- if @result.success?
+  <p style="color: green">Success</p>
+- else
+  <p style="color: red">Fail</p>
+= link_to 'Back', tests_path
