@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResultsController < ApplicationController
   before_action :find_result, only: %i[show update result]
 
@@ -19,5 +21,4 @@ class ResultsController < ApplicationController
   def find_result
     @result = Result.find(params[:id])
   end
-
 end

@@ -5,14 +5,12 @@ class Result < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :set_current_question, on: [:create, :update]
+  before_validation :set_current_question, on: %i[create update]
 
-  SUCCESS_RATE = 85.freeze
+  SUCCESS_RATE = 85
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.score += 1
-    end
+    self.score += 1 if correct_answer?(answer_ids)
 
     save!
   end
@@ -45,11 +43,11 @@ class Result < ApplicationRecord
 
   def set_next_question
     self.current_question = test.questions
-    .order(:id)
-    .where(
-      'id > :id',
-      id: current_question.id
-    ).first
+                                .order(:id)
+                                .where(
+                                  'id > :id',
+                                  id: current_question.id
+                                ).first
   end
 
   def correct_answer?(answer_ids)

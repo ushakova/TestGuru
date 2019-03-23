@@ -20,7 +20,7 @@ class QuestionsController < ApplicationController
 
   def create
     question = @test.questions.new(body: question_params[:body])
-    
+
     if question.save
       redirect_to question
     else
