@@ -1,3 +1,15 @@
 %p
   = @question.body
+%p
+  = 'Answers:'
+  %table
+    %tr
+      %th
+        = 'Answers'
+      %th
+      %th
+    = render @question.answers
+
+= link_to 'New answer', new_question_answer_path(@question)
+= link_to 'Edit', edit_question_path(@question)
 = link_to 'Back', test_path(@question.test)
