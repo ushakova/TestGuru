@@ -1,0 +1,6 @@
+%h1
+  = "Test: #{@result.test.title}, question #{@result.question_number} / #{@result.number_of_questions}"
+%p
+  = "Current question: #{@result.current_question.body}"
+
+= render 'form'

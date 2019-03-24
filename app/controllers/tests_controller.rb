@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show edit update destroy]
+  before_action :find_test, only: %i[show edit update destroy start]
 
   def index
     @tests = Test.all
@@ -36,6 +36,12 @@ class TestsController < ApplicationController
   def destroy
     @test.destroy
     redirect_to action: :index
+  end
+
+  def start
+    user = User.first
+    user.tests << @test
+    redirect_to user.test_result(@test)
   end
 
   private

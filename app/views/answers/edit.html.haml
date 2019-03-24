@@ -1,0 +1,5 @@
+%h1
+  = "Edit answer for '#{@answer.question.body}' question"
+= render 'form'
+%p
+  = link_to 'Back', question_path(@answer.question)

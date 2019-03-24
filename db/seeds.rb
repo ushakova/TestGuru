@@ -43,5 +43,7 @@ answers = Answer.create(
     { body: 'E = m * c^2',
       correct: true,
       question: question },
-    { body: '2pi * r', correct: false, question: question }
+    { body: '2pi * r',
+      correct: false,
+      question: question }
   ])

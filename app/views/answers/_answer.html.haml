@@ -1,0 +1,9 @@
+%tr
+  %td
+    = link_to answer.body, answer_path(answer)
+  %td
+    = link_to 'Edit', edit_answer_path(answer)
+  %td
+    = link_to 'Delete', answer_path(answer),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' }

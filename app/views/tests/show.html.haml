@@ -9,7 +9,10 @@
   = 'Questions:'
 - @test.questions.each do |question|
   %p
-    = question.body
+    = link_to question.body, question_path(question)
+%p
+  = link_to 'Start test', start_test_path(@test.id),
+                          method: :post
 %p
   = link_to 'Edit', edit_test_path(@test)
 %p
